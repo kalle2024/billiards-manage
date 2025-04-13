@@ -1,0 +1,573 @@
+POST http://localhost:8080/recharge-record/recharge
+Content-Type: application/json
+satoken: 7a458a6a-a5ad-4c59-8d12-13f6806b29a6
+Content-Length: 32
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.3.5
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: satoken=7a458a6a-a5ad-4c59-8d12-13f6806b29a6
+
+{
+  "userId": 1,
+  "amount": 1
+}
+
+<> 2025-04-12T220017.200.json
+
+###
+
+POST http://localhost:8080/recharge-record/recharge
+Content-Type: application/json
+satoken: 7a458a6a-a5ad-4c59-8d12-13f6806b29a6
+Content-Length: 32
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.3.5
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: satoken=7a458a6a-a5ad-4c59-8d12-13f6806b29a6
+
+{
+  "userId": 1,
+  "amount": 1
+}
+
+<> 2025-04-12T215952.500.json
+
+###
+
+POST http://localhost:8080/user/login
+Content-Type: application/json
+Content-Length: 49
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.3.5
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: satoken=4252980f-908b-457c-8129-e619355f0859
+
+{
+  "username": "admin",
+  "password": "123456"
+}
+
+<> 2025-04-12T215829.200.json
+
+###
+
+POST http://localhost:8080/user/enter
+Content-Type: application/json
+satoken: c37dfff3-75fd-4e6e-a36d-aff7f4c3810e
+Content-Length: 206
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.3.5
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: satoken=4252980f-908b-457c-8129-e619355f0859
+
+{
+  "username": "zhangsan",
+  "password": "zhangsan",
+  "mobile": "13800138000",
+  "nickname": "张三",
+  "avatarUrl": "https://wx2.sinaimg.cn/mw690/a1ac48b7ly1hw3fsdspucj20u00u048q.jpg",
+  "userType": 0
+}
+
+<> 2025-04-12T212612.500.html
+
+###
+
+POST http://localhost:8080/user/login
+Content-Type: application/json
+Content-Length: 49
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.3.5
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: satoken=2a5ac774-8e1f-4b82-89fc-0ae4b785da88
+
+{
+  "username": "admin",
+  "password": "123456"
+}
+
+<> 2025-04-12T212603.200.json
+
+###
+
+POST http://localhost:8080/user/login
+Content-Type: application/json
+Content-Length: 49
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.3.5
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "username": "admin",
+  "password": "123456"
+}
+
+<> 2025-04-12T212504.200.json
+
+###
+
+POST http://localhost:8080/user/delete/2
+satoken: c37dfff3-75fd-4e6e-a36d-aff7f4c3810e
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.3.5
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: satoken=c37dfff3-75fd-4e6e-a36d-aff7f4c3810e
+content-length: 0
+
+<> 2025-04-11T012425.200.json
+
+###
+
+POST http://localhost:8080/user/delete/2
+satoken: c37dfff3-75fd-4e6e-a36d-aff7f4c3810e
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.3.5
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: satoken=c37dfff3-75fd-4e6e-a36d-aff7f4c3810e
+content-length: 0
+
+<> 2025-04-11T012309.200.json
+
+###
+
+POST http://localhost:8080/user/modify
+Content-Type: application/json
+satoken: c37dfff3-75fd-4e6e-a36d-aff7f4c3810e
+Content-Length: 174
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.3.5
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: satoken=c37dfff3-75fd-4e6e-a36d-aff7f4c3810e
+
+{
+  "id": 2,
+  "username": "lisi",
+  "mobile": "10086",
+  "password": "10086",
+  "nickname": "李四",
+  "avatarUrl": "https://www.baidu.com/去死吧.jpg",
+  "userType": 0
+}
+
+<> 2025-04-11T012230.200.json
+
+###
+
+POST http://localhost:8080/user/enter
+Content-Type: application/json
+satoken: c37dfff3-75fd-4e6e-a36d-aff7f4c3810e
+Content-Length: 206
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.3.5
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: satoken=c37dfff3-75fd-4e6e-a36d-aff7f4c3810e
+
+{
+  "username": "zhangsan",
+  "password": "zhangsan",
+  "mobile": "13800138000",
+  "nickname": "张三",
+  "avatarUrl": "https://wx2.sinaimg.cn/mw690/a1ac48b7ly1hw3fsdspucj20u00u048q.jpg",
+  "userType": 0
+}
+
+<> 2025-04-11T012049.200.json
+
+###
+
+POST http://localhost:8080/user/login
+Content-Type: application/json
+Content-Length: 49
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.3.5
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: satoken=10843a6b-a867-4b65-ae6f-9db07cb57030
+
+{
+  "username": "admin",
+  "password": "123456"
+}
+
+<> 2025-04-11T012037.200.json
+
+###
+
+POST http://localhost:8080/user/enter
+Content-Type: application/json
+satoken: 10843a6b-a867-4b65-ae6f-9db07cb57030
+Content-Length: 206
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.3.5
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: satoken=10843a6b-a867-4b65-ae6f-9db07cb57030
+
+{
+  "username": "zhangsan",
+  "password": "zhangsan",
+  "mobile": "13800138000",
+  "nickname": "张三",
+  "avatarUrl": "https://wx2.sinaimg.cn/mw690/a1ac48b7ly1hw3fsdspucj20u00u048q.jpg",
+  "userType": 0
+}
+
+<> 2025-04-11T012019.200.json
+
+###
+
+POST http://localhost:8080/user/login
+Content-Type: application/json
+Content-Length: 49
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.3.5
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: satoken=74329a75-542c-4718-95ff-62b6bad65189
+
+{
+  "username": "admin",
+  "password": "123456"
+}
+
+<> 2025-04-11T011938.200.json
+
+###
+
+POST http://localhost:8080/user/enter
+Content-Type: application/json
+satoken: 74329a75-542c-4718-95ff-62b6bad65189
+Content-Length: 206
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.3.5
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: satoken=74329a75-542c-4718-95ff-62b6bad65189
+
+{
+  "username": "zhangsan",
+  "password": "zhangsan",
+  "mobile": "13800138000",
+  "nickname": "张三",
+  "avatarUrl": "https://wx2.sinaimg.cn/mw690/a1ac48b7ly1hw3fsdspucj20u00u048q.jpg",
+  "userType": 0
+}
+
+<> 2025-04-11T011911.200.json
+
+###
+
+POST http://localhost:8080/user/login
+Content-Type: application/json
+Content-Length: 49
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.3.5
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: satoken=6aa21e83-5e9e-426b-babf-3655b3aed2ac
+
+{
+  "username": "admin",
+  "password": "123456"
+}
+
+<> 2025-04-11T011824.200.json
+
+###
+
+POST http://localhost:8080/user/login
+Content-Type: application/json
+Content-Length: 49
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.3.5
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: satoken=4986014d-9c23-437d-a846-e94541aa1448
+
+{
+  "username": "admin",
+  "password": "123456"
+}
+
+<> 2025-04-11T011751.200.json
+
+###
+
+POST http://localhost:8080/user/login
+Content-Type: application/json
+Content-Length: 49
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.3.5
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: satoken=b76c126d-7722-4d71-b4bd-b5e696d50d42
+
+{
+  "username": "admin",
+  "password": "123456"
+}
+
+<> 2025-04-11T011654.200.json
+
+###
+
+POST http://localhost:8080/user/login
+Content-Type: application/json
+Content-Length: 49
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.3.5
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: satoken=7829404d-7c2a-4ef3-ae7d-74e181adb9de
+
+{
+  "username": "admin",
+  "password": "123456"
+}
+
+<> 2025-04-11T011653.200.json
+
+###
+
+POST http://localhost:8080/user/login
+Content-Type: application/json
+Content-Length: 49
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.3.5
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: satoken=5c339d88-f43c-4050-aeaf-ee062de3adef
+
+{
+  "username": "admin",
+  "password": "123456"
+}
+
+<> 2025-04-11T011644.200.json
+
+###
+
+POST http://localhost:8080/user/login
+Content-Type: application/json
+Content-Length: 49
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.3.5
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: satoken=d94932df-bcae-4bfa-beff-d018183ed22e
+
+{
+  "username": "admin",
+  "password": "123456"
+}
+
+<> 2025-04-11T011632.200.json
+
+###
+
+POST http://localhost:8080/user/login
+Content-Type: application/json
+Content-Length: 49
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.3.5
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: satoken=f6944f97-a55a-4c63-901e-fcb5d3e09e65
+
+{
+  "username": "admin",
+  "password": "123456"
+}
+
+<> 2025-04-11T011612.200.json
+
+###
+
+POST http://localhost:8080/user/login
+Content-Type: application/json
+Content-Length: 49
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.3.5
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: satoken=2d68c06d-53ba-4308-b2d8-e46c913d54be
+
+{
+  "username": "admin",
+  "password": "123456"
+}
+
+<> 2025-04-11T011558.200.json
+
+###
+
+POST http://localhost:8080/user/enter
+Content-Type: application/json
+satoken: 2d68c06d-53ba-4308-b2d8-e46c913d54be
+Content-Length: 206
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.3.5
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: satoken=2d68c06d-53ba-4308-b2d8-e46c913d54be
+
+{
+  "username": "zhangsan",
+  "password": "zhangsan",
+  "mobile": "13800138000",
+  "nickname": "张三",
+  "avatarUrl": "https://wx2.sinaimg.cn/mw690/a1ac48b7ly1hw3fsdspucj20u00u048q.jpg",
+  "userType": 0
+}
+
+<> 2025-04-11T011412.200.json
+
+###
+
+POST http://localhost:8080/user/login
+Content-Type: application/json
+Content-Length: 49
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.3.5
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: satoken=6f625f3f-44a8-42f9-99af-a69b1446eaff
+
+{
+  "username": "admin",
+  "password": "123456"
+}
+
+<> 2025-04-11T011402.200.json
+
+###
+
+POST http://localhost:8080/user/enter
+Content-Type: application/json
+satoken: 6f625f3f-44a8-42f9-99af-a69b1446eaff
+Content-Length: 206
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.3.5
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: satoken=6f625f3f-44a8-42f9-99af-a69b1446eaff
+
+{
+  "username": "zhangsan",
+  "password": "zhangsan",
+  "mobile": "13800138000",
+  "nickname": "张三",
+  "avatarUrl": "https://wx2.sinaimg.cn/mw690/a1ac48b7ly1hw3fsdspucj20u00u048q.jpg",
+  "userType": 0
+}
+
+<> 2025-04-11T011334.500.html
+
+###
+
+POST http://localhost:8080/user/enter
+Content-Type: application/json
+satoken: 6f625f3f-44a8-42f9-99af-a69b1446eaff
+Content-Length: 206
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.3.5
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: satoken=6f625f3f-44a8-42f9-99af-a69b1446eaff
+
+{
+  "username": "zhangsan",
+  "password": "zhangsan",
+  "mobile": "13800138000",
+  "nickname": "张三",
+  "avatarUrl": "https://wx2.sinaimg.cn/mw690/a1ac48b7ly1hw3fsdspucj20u00u048q.jpg",
+  "userType": 0
+}
+
+<> 2025-04-11T011113.500.json
+
+###
+
+POST http://localhost:8080/user/enter
+Content-Type: application/json
+satoken: 6f625f3f-44a8-42f9-99af-a69b1446eaff
+Content-Length: 206
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.3.5
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: satoken=6f625f3f-44a8-42f9-99af-a69b1446eaff
+
+{
+  "username": "zhangsan",
+  "password": "zhangsan",
+  "mobile": "13800138000",
+  "nickname": "张三",
+  "avatarUrl": "https://wx2.sinaimg.cn/mw690/a1ac48b7ly1hw3fsdspucj20u00u048q.jpg",
+  "userType": 0
+}
+
+<> 2025-04-11T011000.500.json
+
+###
+
+POST http://localhost:8080/user/login
+Content-Type: application/json
+Content-Length: 49
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.3.5
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: satoken=06633fba-0751-4317-9804-19b64446ad7c
+
+{
+  "username": "admin",
+  "password": "123456"
+}
+
+<> 2025-04-11T010935.200.json
+
+###
+
+POST http://localhost:8080/user/enter
+Content-Type: application/json
+satoken: 06633fba-0751-4317-9804-19b64446ad7c
+Content-Length: 206
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.3.5
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: satoken=06633fba-0751-4317-9804-19b64446ad7c
+
+{
+  "username": "zhangsan",
+  "password": "zhangsan",
+  "mobile": "13800138000",
+  "nickname": "张三",
+  "avatarUrl": "https://wx2.sinaimg.cn/mw690/a1ac48b7ly1hw3fsdspucj20u00u048q.jpg",
+  "userType": 0
+}
+
+<> 2025-04-11T010850.500.json
+
+###
+
+POST http://localhost:8080/user/enter
+Content-Type: application/json
+satoken: 06633fba-0751-4317-9804-19b64446ad7c
+Content-Length: 206
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.3.5
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: satoken=06633fba-0751-4317-9804-19b64446ad7c
+
+{
+  "username": "zhangsan",
+  "password": "zhangsan",
+  "mobile": "13800138000",
+  "nickname": "张三",
+  "avatarUrl": "https://wx2.sinaimg.cn/mw690/a1ac48b7ly1hw3fsdspucj20u00u048q.jpg",
+  "userType": 0
+}
+
+<> 2025-04-11T010811.500.json
+
+###
+
+POST http://localhost:8080/user/login
+Content-Type: application/json
+Content-Length: 49
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.3.5
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "username": "admin",
+  "password": "123456"
+}
+
+<> 2025-04-11T010636.200.json
+
+###
+
