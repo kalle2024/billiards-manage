@@ -1,5 +1,6 @@
 package cn.hy.controller;
 
+import cn.dev33.satoken.annotation.SaCheckRole;
 import cn.dev33.satoken.util.SaResult;
 import cn.hutool.core.bean.BeanUtil;
 import cn.hy.mapper.GoodsMapper;
@@ -20,6 +21,7 @@ import java.util.Objects;
  */
 @RestController
 @RequestMapping("/goods-type")
+@SaCheckRole("SUPER_ADMIN")
 public class GoodsTypeController {
 
     @Resource
@@ -49,7 +51,7 @@ public class GoodsTypeController {
     }
 
     @PostMapping("/delete/{id}")
-    public SaResult delete(@PathVariable("id") Integer id) {
+    public SaResult deleteById(@PathVariable("id") Integer id) {
         long count = goodsMapper.selectCountByGoodsTypeId(id);
         if (count > 0) {
             return SaResult.error("该商品类型下存在商品，无法删除");

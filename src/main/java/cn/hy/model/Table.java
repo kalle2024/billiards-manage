@@ -6,17 +6,16 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 /**
- * 充值记录表
+ * 球桌表
  *
  * @author hy
  */
 @Data
-@TableName("bm_recharge_record")
-public class RechargeRecord implements Serializable {
+@TableName("bm_goods_type")
+public class Table implements Serializable {
 
     /**
      * 主键
@@ -25,19 +24,19 @@ public class RechargeRecord implements Serializable {
     private Integer id;
 
     /**
-     * 充值用户id
+     * 球桌类型(1:中式八球、2:斯诺克)
      */
-    private Integer userId;
+    private Integer type;
 
     /**
-     * 充值金额
+     * 球桌名称
      */
-    private BigDecimal amount;
+    private String name;
 
     /**
-     * 操作人id
+     * 球桌状态(0:未启用、1:已启用、2:营运中)
      */
-    private Integer operatorId;
+    private Integer status;
 
     /**
      * 创建时间

@@ -1,3 +1,143 @@
+POST http://localhost:8888/user/enter
+Content-Type: application/json
+satoken: deaa7423-5efa-4524-bb6e-7f24b7e789fe
+Content-Length: 140
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: satoken=deaa7423-5efa-4524-bb6e-7f24b7e789fe
+
+{
+  "username": "zhangsan",
+  "password": "zhangsan",
+  "mobile": "zhangsan",
+  "nickname": "zhangsan",
+  "avatarUrl": "",
+  "userType": 0
+}
+
+<> 2025-04-14T172400.200.json
+
+###
+
+POST http://localhost:8888/user/enter
+Content-Type: application/json
+satoken: deaa7423-5efa-4524-bb6e-7f24b7e789fe
+Content-Length: 140
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: satoken=deaa7423-5efa-4524-bb6e-7f24b7e789fe
+
+{
+  "username": "zhangsan",
+  "password": "zhangsan",
+  "mobile": "zhangsan",
+  "nickname": "zhangsan",
+  "avatarUrl": "",
+  "userType": 0
+}
+
+<> 2025-04-14T172347.200.json
+
+###
+
+POST http://localhost:8888/user/login
+Content-Type: application/json
+Content-Length: 49
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "username": "admin",
+  "password": "123456"
+}
+
+<> 2025-04-14T172258.200.json
+
+###
+
+POST http://localhost:8888/user/login
+Content-Type: application/json
+Content-Length: 49
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "username": "admin",
+  "password": "123456"
+}
+
+<> 2025-04-14T172233.500.html
+
+###
+
+POST http://localhost:8888/user/login
+Content-Type: application/json
+Content-Length: 49
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "username": "admin",
+  "password": "123456"
+}
+
+<> 2025-04-14T172206.500.html
+
+###
+
+POST http://localhost:8888/user/login
+Content-Type: application/json
+Content-Length: 49
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "username": "admin",
+  "password": "123456"
+}
+
+<> 2025-04-14T172052.500.html
+
+###
+
+POST http://localhost:8888/user/login
+Content-Type: application/json
+Content-Length: 49
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "username": "admin",
+  "password": "123456"
+}
+
+<> 2025-04-14T171903.500.html
+
+###
+
+POST http://localhost:8888/user/login
+Content-Type: application/json
+Content-Length: 49
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "username": "admin",
+  "password": "123456"
+}
+
+<> 2025-04-14T110655.200.json
+
+###
+
 POST http://localhost:8080/recharge-record/recharge
 Content-Type: application/json
 satoken: 7a458a6a-a5ad-4c59-8d12-13f6806b29a6

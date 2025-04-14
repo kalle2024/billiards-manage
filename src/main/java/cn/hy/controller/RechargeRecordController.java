@@ -1,6 +1,10 @@
 package cn.hy.controller;
 
+import cn.dev33.satoken.annotation.SaCheckRole;
+import cn.dev33.satoken.annotation.SaMode;
+import cn.dev33.satoken.stp.StpUtil;
 import cn.dev33.satoken.util.SaResult;
+import cn.hy.enums.UserTypeEnum;
 import cn.hy.mapper.RechargeRecordMapper;
 import cn.hy.mapper.UserMapper;
 import cn.hy.model.RechargeRecord;
@@ -34,6 +38,7 @@ public class RechargeRecordController {
 
     @PostMapping("/recharge")
     @Transactional(rollbackFor = Exception.class)
+    @SaCheckRole(value = {"SUPER_ADMIN", "STAFF"}, mode = SaMode.OR)
     public SaResult recharge(@RequestBody @Valid RechargeParam param) {
         // 给用户充值
         userMapper.recharge(param);
@@ -48,6 +53,10 @@ public class RechargeRecordController {
 
     @PostMapping("/page")
     public SaResult page(@RequestBody @Valid RechargePageParam param) {
+        // 会员或者普通用户，就只能看到自己的充值记录
+        if (StpUtil.hasRoleOr(UserTypeEnum.MEMBER.getCode(), UserTypeEnum.USER.getCode())) {
+            param.setUserId(UserUtil.getLoginUserId());
+        }
         // 获取充值记录列表
         Page<RechargeRecord> page = rechargeRecordMapper.selectPage(param);
         return SaResult.data(page);

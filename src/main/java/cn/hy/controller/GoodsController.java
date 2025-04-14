@@ -1,5 +1,6 @@
 package cn.hy.controller;
 
+import cn.dev33.satoken.annotation.SaCheckRole;
 import cn.dev33.satoken.util.SaResult;
 import cn.hutool.core.bean.BeanUtil;
 import cn.hy.mapper.GoodsMapper;
@@ -20,6 +21,7 @@ import javax.validation.Valid;
  */
 @RestController
 @RequestMapping("/goods")
+@SaCheckRole("SUPER_ADMIN")
 public class GoodsController {
 
     @Resource
@@ -42,7 +44,7 @@ public class GoodsController {
     }
 
     @PostMapping("/delete/{id}")
-    public SaResult delete(@PathVariable Integer id) {
+    public SaResult deleteById(@PathVariable Integer id) {
         int delete = goodsMapper.deleteById(id);
         if (delete == 0) {
             return SaResult.error("删除失败");
@@ -54,5 +56,11 @@ public class GoodsController {
     public SaResult page(@RequestBody @Valid GoodsPageParam param) {
         Page<Goods> goodsPage = goodsMapper.selectPage(param);
         return SaResult.data(goodsPage);
+    }
+
+    @GetMapping("/get/{id}")
+    public SaResult getById(@PathVariable("id") Integer id) {
+        Goods goods = goodsMapper.selectById(id);
+        return SaResult.data(goods);
     }
 }

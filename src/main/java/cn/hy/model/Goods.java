@@ -1,8 +1,11 @@
 package cn.hy.model;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
@@ -13,11 +16,12 @@ import java.time.LocalDateTime;
  */
 @Data
 @TableName("bm_goods")
-public class Goods {
+public class Goods implements Serializable {
 
     /**
      * 主键
      */
+    @TableId(type = IdType.AUTO)
     private Integer id;
 
     /**

@@ -5,6 +5,21 @@ create database bm;
 -- 应用bm数据库到当前会话
 use bm;
 
+-- 令牌表
+drop table if exists bm_token;
+create table bm_token
+(
+    id          int          not null auto_increment comment '主键',
+    login_id    varchar(100) not null comment '登录id',
+    token       text         not null comment '令牌',
+    expire_time datetime     null comment '失效时间',
+    create_time datetime     not null default current_timestamp comment '创建时间',
+    update_time datetime     not null default current_timestamp on update current_timestamp comment '更新时间',
+    primary key (id)
+) comment '令牌表';
+
+create unique index uniq_login_id on bm_token (login_id);
+
 -- 用户表
 drop table if exists bm_user;
 create table bm_user
@@ -55,6 +70,12 @@ create table bm_goods_type
 
 create unique index uniq_type on bm_goods_type (type);
 
+-- 初始化商品类型
+insert into bm_goods_type(id, type)
+values (1, '食品'),
+       (2, '中式台球'),
+       (3, '斯诺克');
+
 -- 商品表
 drop table if exists bm_goods;
 create table bm_goods
@@ -67,3 +88,38 @@ create table bm_goods
     update_time   datetime     not null default current_timestamp on update current_timestamp comment '更新时间',
     primary key (id)
 );
+
+-- 初始化商品
+insert into bm_goods(id, goods_type_id, name, price)
+values (1, 1, '可口可乐', 2.5),
+       (2, 1, '薯片', 4.0),
+       (3, 1, '泡面', 4.5),
+       (4, 2, '[团购]中八闲时(周一至周日10:00~18:00)2小时', 19.9),
+       (5, 2, '中八全天2小时', 39.9),
+       (6, 2, '斯诺克2小时', 56);
+
+-- 球桌表
+drop table if exists bm_table;
+create table bm_table
+(
+    id          int         not null auto_increment comment '主键',
+    type        int         not null comment '球桌类型(1:中式八球、2:斯诺克)',
+    name        varchar(50) not null comment '球桌名称',
+    status      int         not null default 0 comment '球桌状态(0:未启用、1:已启用、2:营运中)',
+    create_time datetime    not null default current_timestamp comment '创建时间',
+    update_time datetime    not null default current_timestamp on update current_timestamp comment '更新时间'
+) comment '球桌表';
+
+insert into bm_table(id, type, name, status)
+values (1, 1, 'CB-1', 1),
+       (2, 1, 'CB-2', 1),
+       (3, 1, 'CB-3', 1),
+       (4, 1, 'CB-4', 1),
+       (5, 1, 'CB-5', 1),
+       (6, 1, 'CB-6', 1),
+       (7, 1, 'CB-7', 1),
+       (8, 1, 'CB-8', 1),
+       (9, 1, 'CB-9', 1),
+       (10, 1, 'CB-10', 1),
+       (11, 2, 'Snooker-1', 1),
+       (12, 2, 'Snooker-2', 1);

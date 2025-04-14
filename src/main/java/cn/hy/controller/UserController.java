@@ -40,6 +40,12 @@ public class UserController {
         return SaResult.ok("登录成功");
     }
 
+    @PostMapping("/logout")
+    public SaResult logout() {
+        StpUtil.logout();
+        return SaResult.ok("退出登录成功");
+    }
+
     @PostMapping("/enter")
     public SaResult enter(@RequestBody @Valid UserEnterParam param) {
         // 只有超级管理员和员工可以录入信息
@@ -113,7 +119,7 @@ public class UserController {
     }
 
     @GetMapping("/get/{id}")
-    public SaResult get(@PathVariable("id") Integer id) {
+    public SaResult getById(@PathVariable("id") Integer id) {
         User user = userMapper.selectById(id);
         return SaResult.data(user);
     }

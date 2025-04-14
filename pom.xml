@@ -66,6 +66,13 @@
             <version>${sa-token-spring-boot-starter.version}</version>
         </dependency>
 
+        <!-- Token存到数据库 -->
+        <dependency>
+            <groupId>cn.dev33</groupId>
+            <artifactId>sa-token-core</artifactId>
+            <version>${sa-token-spring-boot-starter.version}</version>
+        </dependency>
+
         <!-- 简化代码，少写getter/setter代码 -->
         <dependency>
             <groupId>org.projectlombok</groupId>
