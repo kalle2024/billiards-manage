@@ -31,6 +31,10 @@ public class TableController {
 
     @PostMapping("/delete/{id}")
     public SaResult deleteById(@PathVariable("id") Integer id) {
+        int delete = tableMapper.deleteById(id);
+        if (delete == 0) {
+            return SaResult.error("删除失败");
+        }
         return SaResult.ok("删除成功");
     }
 
