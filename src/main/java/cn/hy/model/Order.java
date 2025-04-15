@@ -6,6 +6,7 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 /**
@@ -15,7 +16,7 @@ import java.time.LocalDateTime;
  */
 @Data
 @TableName("bm_table")
-public class Table implements Serializable {
+public class Order implements Serializable {
 
     /**
      * 主键
@@ -24,17 +25,27 @@ public class Table implements Serializable {
     private Integer id;
 
     /**
-     * 球桌类型(1:中式八球、2:斯诺克)
+     * 下单用户id
      */
-    private Integer type;
+    private Integer userId;
 
     /**
-     * 球桌名称
+     * 商品id
      */
-    private String name;
+    private Integer goodsId;
 
     /**
-     * 球桌状态(0:未启用、1:已启用、2:营运中)
+     * 原商品名称
+     */
+    private String originGoodsName;
+
+    /**
+     * 支付价格
+     */
+    private BigDecimal price;
+
+    /**
+     * 订单状态(0:待使用、1:已使用、2:已取消)
      */
     private Integer status;
 

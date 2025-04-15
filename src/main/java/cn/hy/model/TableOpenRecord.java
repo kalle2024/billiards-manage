@@ -5,17 +5,16 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
-import java.io.Serializable;
 import java.time.LocalDateTime;
 
 /**
- * 球桌表
+ * 开台记录表
  *
  * @author hy
  */
 @Data
-@TableName("bm_table")
-public class Table implements Serializable {
+@TableName("bm_token")
+public class TableOpenRecord {
 
     /**
      * 主键
@@ -24,19 +23,19 @@ public class Table implements Serializable {
     private Integer id;
 
     /**
-     * 球桌类型(1:中式八球、2:斯诺克)
+     * 订单id
      */
-    private Integer type;
+    private Integer orderId;
 
     /**
-     * 球桌名称
+     * 球桌id
      */
-    private String name;
+    private Integer tableId;
 
     /**
-     * 球桌状态(0:未启用、1:已启用、2:营运中)
+     * 到期时间
      */
-    private Integer status;
+    private LocalDateTime expireTime;
 
     /**
      * 创建时间

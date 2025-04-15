@@ -1,7 +1,6 @@
 package cn.hy.mapper;
 
 import cn.hy.model.User;
-import cn.hy.param.RechargeParam;
 import cn.hy.param.UserPageParam;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
@@ -9,6 +8,8 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Update;
+
+import java.math.BigDecimal;
 
 /**
  * 用户 Mapper
@@ -35,5 +36,8 @@ public interface UserMapper extends BaseMapper<User> {
     }
 
     @Update("update bm_user set balance = balance + #{param.amount} where id = #{param.userId}")
-    void recharge(@Param("param") RechargeParam param);
+    void plusBalance(@Param("userId") Integer userId, @Param("price") BigDecimal amount);
+
+    @Update("update bm_user set balance = balance - #{amount} where id = #{userId} and balance > #{amount}")
+    int minusBalance(@Param("userId") Integer userId, @Param("price") BigDecimal amount);
 }

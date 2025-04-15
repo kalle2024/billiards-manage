@@ -110,6 +110,7 @@ create table bm_table
     update_time datetime    not null default current_timestamp on update current_timestamp comment '更新时间'
 ) comment '球桌表';
 
+-- 初始化球桌
 insert into bm_table(id, type, name, status)
 values (1, 1, 'CB-1', 1),
        (2, 1, 'CB-2', 1),
@@ -123,3 +124,31 @@ values (1, 1, 'CB-1', 1),
        (10, 1, 'CB-10', 1),
        (11, 2, 'Snooker-1', 1),
        (12, 2, 'Snooker-2', 1);
+
+-- 订单表
+drop table if exists bm_order;
+create table bm_order
+(
+    id                int          not null auto_increment comment '主键',
+    user_id           int          not null comment '下单用户id',
+    goods_id          int          not null comment '商品id',
+    origin_goods_name varchar(200) not null comment '原商品名称',
+    price             decimal(12, 2)        default 0.0 comment '支付价格',
+    status            int          not null default 0 comment '订单状态(0:待使用、1:已使用、2:已取消)',
+    create_time       datetime     not null default current_timestamp comment '创建时间',
+    update_time       datetime     not null default current_timestamp on update current_timestamp comment '更新时间',
+    primary key (id)
+) comment '订单表';
+
+-- 开台记录表
+drop table if exists bm_table_open_record;
+create table bm_table_open_record
+(
+    id          int      not null auto_increment comment '主键',
+    order_id    int      not null comment '订单id',
+    table_id    int      not null comment '球桌id',
+    expire_time datetime not null comment '到期时间',
+    create_time datetime not null default current_timestamp comment '创建时间',
+    update_time datetime not null default current_timestamp on update current_timestamp comment '更新时间',
+    primary key (id)
+) comment '开台记录表';

@@ -41,7 +41,8 @@ public class RechargeRecordController {
     @SaCheckRole(value = {"SUPER_ADMIN", "STAFF"}, mode = SaMode.OR)
     public SaResult recharge(@RequestBody @Valid RechargeParam param) {
         // 给用户充值
-        userMapper.recharge(param);
+        userMapper.plusBalance(param.getUserId(), param.getAmount());
+
         // 新增充值记录
         RechargeRecord rechargeRecord = new RechargeRecord();
         rechargeRecord.setUserId(param.getUserId());
@@ -57,6 +58,7 @@ public class RechargeRecordController {
         if (StpUtil.hasRoleOr(UserTypeEnum.MEMBER.getCode(), UserTypeEnum.USER.getCode())) {
             param.setUserId(UserUtil.getLoginUserId());
         }
+
         // 获取充值记录列表
         Page<RechargeRecord> page = rechargeRecordMapper.selectPage(param);
         return SaResult.data(page);

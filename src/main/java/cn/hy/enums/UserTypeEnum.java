@@ -5,6 +5,11 @@ import lombok.Getter;
 
 import java.util.Objects;
 
+/**
+ * 用户类型 枚举
+ *
+ * @author hy
+ */
 @Getter
 @AllArgsConstructor
 public enum UserTypeEnum {
