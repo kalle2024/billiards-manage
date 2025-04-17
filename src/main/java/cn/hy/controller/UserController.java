@@ -11,6 +11,7 @@ import cn.hy.param.UserEnterParam;
 import cn.hy.param.UserModifyParam;
 import cn.hy.param.UserPageParam;
 import cn.hy.param.UsernameLoginParam;
+import cn.hy.util.UserUtil;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,7 +25,7 @@ import java.util.Objects;
  * @author hy
  */
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/api/user")
 public class UserController {
 
     @Resource
@@ -44,6 +45,12 @@ public class UserController {
     public SaResult logout() {
         StpUtil.logout();
         return SaResult.ok("退出登录成功");
+    }
+
+    @GetMapping("/user-info")
+    public SaResult userInfo() {
+        User user = userMapper.selectById(UserUtil.getLoginUserId());
+        return SaResult.data(user);
     }
 
     @PostMapping("/enter")

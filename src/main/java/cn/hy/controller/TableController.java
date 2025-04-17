@@ -35,7 +35,7 @@ import java.util.concurrent.TimeUnit;
  * @author hy
  */
 @RestController
-@RequestMapping("/table")
+@RequestMapping("/api/table")
 public class TableController {
 
     @Resource

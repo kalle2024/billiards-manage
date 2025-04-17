@@ -6,6 +6,10 @@ spring:
     url: jdbc:mysql:///bm?useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
     username: root
     password: 123456
+  thymeleaf:
+    cache: false
 mybatis-plus:
   global-config:
     banner: false
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

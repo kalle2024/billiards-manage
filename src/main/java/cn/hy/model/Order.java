@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
  * @author hy
  */
 @Data
-@TableName("bm_table")
+@TableName("bm_order")
 public class Order implements Serializable {
 
     /**

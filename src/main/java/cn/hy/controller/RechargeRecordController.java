@@ -27,7 +27,7 @@ import javax.validation.Valid;
  * @author hy
  */
 @RestController
-@RequestMapping("/recharge-record")
+@RequestMapping("/api/recharge-record")
 public class RechargeRecordController {
 
     @Resource

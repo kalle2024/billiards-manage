@@ -1,7 +1,6 @@
 package cn.hy.config;
 
 import cn.dev33.satoken.util.SaResult;
-import org.springframework.validation.BindException;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -16,7 +15,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 public class GlobalExceptionConfig {
 
     @ExceptionHandler(value = Exception.class)
-    public SaResult exceptionHandler(BindException e) {
+    public SaResult exceptionHandler(Exception e) {
         return SaResult.error(e.getMessage());
     }
 

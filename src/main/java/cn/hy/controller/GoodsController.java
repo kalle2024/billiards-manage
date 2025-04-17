@@ -20,7 +20,7 @@ import javax.validation.Valid;
  * @author hy
  */
 @RestController
-@RequestMapping("/goods")
+@RequestMapping("/api/goods")
 @SaCheckRole("SUPER_ADMIN")
 public class GoodsController {
 

@@ -26,7 +26,7 @@ import javax.validation.Valid;
  * @author hy
  */
 @RestController
-@RequestMapping("/order")
+@RequestMapping("/api/order")
 public class OrderController {
 
     @Resource

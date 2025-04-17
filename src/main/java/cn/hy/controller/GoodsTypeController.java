@@ -20,7 +20,7 @@ import java.util.Objects;
  * @author hy
  */
 @RestController
-@RequestMapping("/goods-type")
+@RequestMapping("/api/goods-type")
 @SaCheckRole("SUPER_ADMIN")
 public class GoodsTypeController {
 

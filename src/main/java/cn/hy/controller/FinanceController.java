@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author hy
  */
 @RestController
-@RequestMapping("/finance")
+@RequestMapping("/api/finance")
 public class FinanceController {
 
     // 按月看充值记录

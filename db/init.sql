@@ -107,7 +107,8 @@ create table bm_table
     name        varchar(50) not null comment '球桌名称',
     status      int         not null default 0 comment '球桌状态(0:未启用、1:已启用、2:营运中)',
     create_time datetime    not null default current_timestamp comment '创建时间',
-    update_time datetime    not null default current_timestamp on update current_timestamp comment '更新时间'
+    update_time datetime    not null default current_timestamp on update current_timestamp comment '更新时间',
+    primary key (id)
 ) comment '球桌表';
 
 -- 初始化球桌
