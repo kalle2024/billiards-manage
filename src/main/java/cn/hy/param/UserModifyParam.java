@@ -35,7 +35,6 @@ public class UserModifyParam {
     /**
      * 密码
      */
-    @NotNull(message = "密码不能为空")
     private String password;
 
     /**

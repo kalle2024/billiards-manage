@@ -40,9 +40,20 @@ create table bm_user
 create unique index uniq_username on bm_user (username);
 create unique index uniq_mobile on bm_user (mobile);
 
--- 初始化一个超管
+-- 初始化用户
 insert into bm_user (id, username, password, nickname, balance, user_type)
-values (1, 'admin', '123456', '超管', 99999999.00, -1);
+values (1, 'admin', 'admin', '超管', 99999999.00, -1),
+       (2, 'zhangsan', 'zhangsan', '张三', 0, 2),
+       (3, 'lisi', 'lisi', '李四', 0, 2),
+       (4, 'wangwu', 'wangwu', '王五', 0, 2),
+       (5, 'vip1', 'vip1', '会员用户1', 0, 1),
+       (6, 'vip2', 'vip2', '会员用户2', 0, 1),
+       (7, 'user1', 'user1', '路人甲1号', 0, 0),
+       (8, 'user2', 'user2', '路人甲2号', 0, 0),
+       (9, 'user3', 'user3', '路人甲3号', 0, 0),
+       (10, 'user4', 'user4', '路人甲4号', 0, 0),
+       (11, 'user5', 'user5', '路人甲5号', 0, 0)
+;
 
 -- 充值记录表
 drop table if exists bm_recharge_record;

@@ -5,6 +5,8 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 /**
  * 充值记录分页 参数
  *
@@ -23,4 +25,14 @@ public class RechargePageParam extends Page<RechargeRecord> {
      * 操作人id
      */
     private Integer operatorId;
+
+    /**
+     * 充值用户名称
+     */
+    private String username;
+
+    /**
+     * 充值用户ids
+     */
+    private List<Integer> userIds;
 }

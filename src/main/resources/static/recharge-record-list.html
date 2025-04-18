@@ -2,7 +2,7 @@
 <html class="x-admin-sm" lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>台球管理系统-会员管理</title>
+    <title>台球管理系统-充值管理</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport"
@@ -18,9 +18,9 @@
 <div class="x-nav">
           <span class="layui-breadcrumb">
             <a href="">首页</a>
-            <a href="">会员管理</a>
+            <a href="">充值管理</a>
             <a>
-              <cite>会员列表</cite></a>
+              <cite>充值记录</cite></a>
           </span>
     <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right"
        onclick="location.reload()" title="刷新">
@@ -34,25 +34,7 @@
                 <div class="layui-card-body ">
                     <div class="layui-form layui-col-space5">
                         <div class="layui-inline layui-show-xs-block">
-                            <input id="search-username" type="text" name="username" placeholder="请输入用户名称"
-                                   autocomplete="off" class="layui-input">
-                        </div>
-                        <div class="layui-inline layui-show-xs-block">
-                            <input id="search-nickname" type="text" name="username" placeholder="请输入昵称"
-                                   autocomplete="off" class="layui-input">
-                        </div>
-                        <div class="layui-inline layui-show-xs-block">
-                            <input id="search-mobile" type="text" name="username" placeholder="请输入手机号码"
-                                   autocomplete="off" class="layui-input">
-                        </div>
-                        <div class="layui-inline layui-show-xs-block">
-                            <select id="search-user-type" name="userType">
-                                <option value="">全部类型</option>
-                                <option value="0">普通用户</option>
-                                <option value="1">会员</option>
-                                <option value="2">员工</option>
-                                <option value="-1">超级管理员</option>
-                            </select>
+                            <input id="search-username" type="text" name="username" placeholder="请输入用户名称" autocomplete="off" class="layui-input">
                         </div>
                         <div class="layui-inline layui-show-xs-block">
                             <button id="search-btn" class="layui-btn">
@@ -61,16 +43,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="layui-card-header">
-                    <button id="batch-del-btn" class="layui-btn layui-btn-danger">
-                        <i class="layui-icon"></i>批量删除
-                    </button>
-                    <button class="layui-btn" onclick="xadmin.open('录入用户','./member-add.html', 600, 440)">
-                        <i class="layui-icon"></i>录入用户
-                    </button>
-                </div>
                 <div class="layui-card-body layui-table-body layui-table-main">
-                    <table id="user-table" class="layui-table layui-form"></table>
+                    <table id="recharge-record-table" class="layui-table layui-form"></table>
                 </div>
             </div>
         </div>
@@ -83,8 +57,8 @@
     layui.use('table', function () {
         var table = layui.table;
         tableRender = table.render({
-            elem: '#user-table',
-            url: '/api/user/page',
+            elem: '#recharge-record-table',
+            url: '/api/recharge-record/page',
             method: 'post',
             page: true,
             autoSort: false,
@@ -99,59 +73,64 @@
             cols: [
                 [
                     {
-                        type: 'checkbox'
-                    },
-                    {
                         field: 'id',
                         title: 'ID',
                         sort: true
                     },
                     {
-                        field: 'username',
-                        title: '用户名'
+                        field: 'user.username',
+                        title: '用户名',
+                        templet: function (d) {
+                            return d.user.username;
+                        }
                     },
                     {
-                        field: 'nickname',
-                        title: '昵称'
+                        field: 'user.nickname',
+                        title: '昵称',
+                        templet: function (d) {
+                            return d.user.nickname;
+                        }
                     },
                     {
-                        field: 'mobile',
-                        title: '手机号码'
+                        field: 'user.mobile',
+                        title: '手机号码',
+                        templet: function (d) {
+                            return d.user.mobile;
+                        }
                     },
                     {
-                        field: 'balance',
+                        field: 'user.balance',
                         title: '余额(￥)',
                         templet: function (d) {
-                            return d.balance.toFixed(2);
+                            return d.user.balance.toFixed(2);
                         }
                     },
                     {
-                        field: 'userType',
+                        field: 'user.userType',
                         title: '用户类型',
                         templet: function (d) {
-                            return deduceUserType(d.userType);
+                            return deduceUserType(d.user.userType);
                         }
                     },
                     {
-                        field: 'createTime',
-                        title: '创建时间'
+                        field: 'amount',
+                        title: '充值金额(￥)',
+                        templet: function (d) {
+                            return `<span style="color: red;">+ ${d.rechargeRecord.amount.toFixed(2)}</span>`;
+                        }
                     },
                     {
-                        field: 'updateTime',
-                        title: '更新时间'
+                        field: 'operator.username',
+                        title: '操作人',
+                        templet: function (d) {
+                            return `${d.operator.nickname}&nbsp;&nbsp;[${d.operator.username}]`;
+                        }
                     },
                     {
-                        title: '操作',
-                        templet: function(d) {
-                            return `<a title="编辑" onclick="xadmin.open('编辑','member-edit.html?id=${d.id}',600,440)" href="javascript:;">
-                                        编辑
-                                      </a>
-                                      <a title="充值" onclick="xadmin.open('充值','member-recharge.html?id=${d.id}',600,200)" href="javascript:;">
-                                        充值
-                                      </a>
-                                      <a title="删除" onclick="member_del(${d.id})" href="javascript:;">
-                                        删除
-                                      </a>`;
+                        field: 'rechargeRecord.createTime',
+                        title: '充值时间',
+                        templet: function (d) {
+                            return d.rechargeRecord.createTime;
                         }
                     }
                 ]

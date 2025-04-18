@@ -3,6 +3,7 @@ package cn.hy.param;
 import lombok.Getter;
 import lombok.Setter;
 
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 
@@ -22,8 +23,8 @@ public class RechargeParam {
     private Integer userId;
 
     /**
-     * 金额
+     * 充值金额
      */
-    @NotNull(message = "金额不能为空")
+    @NotNull(message = "充值金额不能为空")
     private BigDecimal amount;
 }

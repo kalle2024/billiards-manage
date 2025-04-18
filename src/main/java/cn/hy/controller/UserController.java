@@ -7,10 +7,7 @@ import cn.hutool.core.util.StrUtil;
 import cn.hy.enums.UserTypeEnum;
 import cn.hy.mapper.UserMapper;
 import cn.hy.model.User;
-import cn.hy.param.UserEnterParam;
-import cn.hy.param.UserModifyParam;
-import cn.hy.param.UserPageParam;
-import cn.hy.param.UsernameLoginParam;
+import cn.hy.param.*;
 import cn.hy.util.UserUtil;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.springframework.web.bind.annotation.*;
@@ -116,6 +113,12 @@ public class UserController {
         if (delete == 0) {
             return SaResult.error("删除失败");
         }
+        return SaResult.ok("删除成功");
+    }
+
+    @PostMapping("/batch-delete-by-ids")
+    public SaResult batchDeleteByIds(@RequestBody @Valid BatchDeleteByIdsParam param) {
+        userMapper.deleteBatchIds(param.getIds());
         return SaResult.ok("删除成功");
     }
 

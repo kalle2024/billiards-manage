@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html class="x-admin-sm" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>台球管理系统-会员管理-充值</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8"/>
+    <link rel="stylesheet" href="./css/font.css">
+    <link rel="stylesheet" href="./css/xadmin.css">
+    <script type="text/javascript" src="./js/jquery.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="./lib/layui/layui.js" charset="utf-8"></script>
+    <script type="text/javascript" src="./js/xadmin.js"></script>
+    <script type="text/javascript" src="./js/main.js"></script>
+<body>
+<div class="layui-fluid">
+    <div class="layui-row">
+        <form class="layui-form">
+            <div class="layui-form-item">
+                <label for="username" class="layui-form-label">
+                    <span class="x-red">*</span>用户名称
+                </label>
+                <div class="layui-input-inline">
+                    <input type="text" id="username" name="username" required="" autocomplete="off" class="layui-input" disabled>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="amount" class="layui-form-label">充值金额</label>
+                <div class="layui-input-inline">
+                    <input type="text" id="amount" name="amount" min="0" maxlength="6" required="" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-inline">
+                    <label class="layui-form-label"></label>
+                    <button class="layui-btn" lay-filter="recharge" lay-submit="">充值</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script>
+    layui.use(
+        ['form', 'layer'],
+        function () {
+            var form = layui.form,
+                layer = layui.layer;
+
+            const id = getFromUrl("id");
+            jsonGet(`/api/user/get/${id}`, function(res) {
+                $("#username").val(res.data.username);
+                form.render();
+            });
+
+            //监听提交
+            form.on('submit(recharge)', function () {
+                jsonPost("/api/recharge-record/recharge", {
+                    userId: id,
+                    amount: $("#amount").val(),
+                }, function() {
+                    layer.msg("充值成功", {
+                            icon: 1
+                        },
+                        function () {
+                            // 获得frame索引
+                            var index = parent.layer.getFrameIndex(window.name);
+                            if (parent.refreshTable) {
+                                parent.refreshTable();
+                            }
+                            //关闭当前frame
+                            parent.layer.close(index);
+                        });
+                });
+                return false;
+            });
+        });
+</script>
+</body>
+
+</html>

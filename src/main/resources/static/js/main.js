@@ -5,7 +5,9 @@ function jsonPost(api, jsonData, callback) {
         data: JSON.stringify(jsonData),
         success: function(response) {
             if (response.code === 200) {
-                callback(response);
+                if (callback) {
+                    callback(response);
+                }
             } else if (response.code === 401) {
                 layer.msg('当前未登录，请登录后再试', function() {
                     location.href='login.html'
@@ -26,7 +28,9 @@ function jsonGet(api, callback) {
         contentType: 'application/json',
         success: function(response) {
             if (response.code === 200) {
-                callback(response);
+                if (callback) {
+                    callback(response);
+                }
             } else if (response.code === 401) {
                 layer.msg('当前未登录，请登录后再试', function() {
                     location.href='login.html'
@@ -63,4 +67,23 @@ function formatDatetime(date) {
     const minutes = String(date.getMinutes()).padStart(2, '0');
     const seconds = String(date.getSeconds()).padStart(2, '0');
     return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+}
+
+function formatData(res) {
+    return {
+        "code": 0,
+        "msg": res.msg,
+        "count": res.data.total,
+        "data": res.data.records
+    }
+}
+
+function getFromUrl(key) {
+    const queryString = window.location.search;
+    const param = new URLSearchParams(queryString);
+    return param.get(key);
+}
+
+function filterBlank(value) {
+    return !value || value === '' ? null : value;
 }

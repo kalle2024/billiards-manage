@@ -37,9 +37,9 @@ public interface UserMapper extends BaseMapper<User> {
         );
     }
 
-    @Update("update bm_user set balance = balance + #{param.amount} where id = #{param.userId}")
-    void plusBalance(@Param("userId") Integer userId, @Param("price") BigDecimal amount);
+    @Update("update bm_user set balance = balance + #{amount} where id = #{userId}")
+    void plusBalance(@Param("userId") Integer userId, @Param("amount") BigDecimal amount);
 
     @Update("update bm_user set balance = balance - #{amount} where id = #{userId} and balance > #{amount}")
-    int minusBalance(@Param("userId") Integer userId, @Param("price") BigDecimal amount);
+    int minusBalance(@Param("userId") Integer userId, @Param("amount") BigDecimal amount);
 }
